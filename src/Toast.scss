@@ -1,0 +1,99 @@
+.toast-wrapper {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 380px;
+  padding: 0 20px 25px 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: calc(100% - 5.5rem);
+  z-index: 1100;  // z-index 1100 will help to make it visible during an open modal
+}
+.toast {
+  opacity: 1 !important;
+  -webkit-animation-name: animateToast;
+  animation-name: animateToast;
+  -webkit-animation-duration: 0.25s; /* Safari 4.0 - 8.0 */
+  animation-duration: 0.25s;    
+  background: #fdfdfd;
+  border-radius: 3px;
+  box-shadow: 0px 6px 10px #0000003d;
+  overflow: hidden;
+  margin-bottom: 15px;
+  
+}
+.toast > .header.error{
+  background: #ff7272;
+}
+.toast > .header.success{
+  background: #8cd88c;
+}
+.toast > .header.default{
+  background: #cccccc;
+}
+.toast > .header{
+  display: flex;
+  padding: .3rem .5rem;
+  position: relative;
+  color: #0000009e;
+}
+.toast > .header > strong{
+  flex-grow: 10;
+      height: 16px;
+    overflow: hidden;white-space: nowrap;
+     text-overflow: ellipsis;
+     padding-right: 5px;
+     color: #0000009e;
+}
+.toast > .header > .close{
+  outline: none;
+  border:none;
+  background:none;
+  font-size: 1.3rem;
+  line-height: 0;
+  margin: 2px -4px 0 1px;
+  padding: 2px;
+  cursor: pointer;
+  color: #0000009e;
+}
+.toast > .header > .close:hover{
+  color: black;
+}
+.toast > .header > small{  
+  margin-top: 1px;
+}
+.toast > .header > .stop {
+  display: none;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.toast:hover > .header > .stop {
+  display: block;
+}
+.toast > .header > .stop:hover {
+  color: black;
+}
+.toast >  .body{
+  padding: .5rem;
+}
+.toast ul {
+  padding-left: 1.5rem;
+  margin:0;
+}
+
+@keyframes animateToast {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .toast-wrapper{
+    width: 100%;
+    right: 0;
+  }
+}

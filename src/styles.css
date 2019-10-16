@@ -1,0 +1,27 @@
+.App {
+  font-family: sans-serif;
+}
+
+.btn {
+  padding: 0.4rem 0.7rem;
+  font-size: 1rem;
+  background: none;
+  border: 2px solid #3399ff;
+  color: #3399ff;
+  border-radius: 3px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.btn.error {
+  border-color: red;
+  color: red;
+}
+.btn.success {
+  border-color: green;
+  color: green;
+}
+.btn:hover {
+  background: #e0e0e0;
+  cursor: pointer;
+}
